@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Vibe - Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 480px;
+            background: white;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 15px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Urban Vibe - Feedback Form</h2>
+
+    <form>
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Your Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>How was your overall shopping experience?</label>
+        <select required>
+            <option value="">Choose...</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <label>Were you satisfied with the product quality?</label>
+        <select required>
+            <option value="">Choose...</option>
+            <option>Very Satisfied</option>
+            <option>Satisfied</option>
+            <option>Neutral</option>
+            <option>Not Satisfied</option>
+        </select>
+
+        <label>How likely are you to recommend Urban Vibe?</label>
+        <select required>
+            <option value="">Choose...</option>
+            <option>Highly Likely</option>
+            <option>Likely</option>
+            <option>Maybe</option>
+            <option>Not Likely</option>
+        </select>
+
+        <label>Any Suggestions or Comments?</label>
+        <textarea rows="4" placeholder="Write your feedback here..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+</body>
+</html>

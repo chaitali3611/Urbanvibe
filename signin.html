@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Sign Up</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 320px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-text a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+        <button onclick="signUp()">Create Account</button>
+
+        <p class="error" id="errorMsg"></p>
+
+        <p class="login-text">
+            Already have an account? <a href="signin.html">Sign In</a>
+        </p>
+    </div>
+
+    <script>
+        function signUp() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+            let cpass = document.getElementById("confirmPassword").value;
+            let error = document.getElementById("errorMsg");
+
+            if (name === "" || email === "" || pass === "" || cpass === "") {
+                error.textContent = "Please fill all fields";
+                return;
+            }
+
+            if (pass !== cpass) {
+                error.textContent = "Passwords do not match";
+                return;
+            }
+
+            error.style.color = "green";
+            error.textContent = "Account created successfully!";
+        }
+    </script>
+
+</body>
+</html>
