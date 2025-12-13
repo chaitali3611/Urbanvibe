@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Sign Up</title>
+    <title>Purchase Page</title>
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
+            font-family: Arial;
+            background-image: url("bg.jpg"); /* change image name */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,11 +22,11 @@
         }
 
         .container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 25px;
             width: 320px;
             border-radius: 8px;
-            box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }
 
         h2 {
@@ -37,7 +41,6 @@
             font-size: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            outline: none;
         }
 
         button {
@@ -50,12 +53,6 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-        }
-
-        .error {
-            color: red;
-            text-align: center;
-            font-size: 14px;
         }
 
         .login-text {
@@ -72,45 +69,41 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Sign Up</h2>
+<div class="container">
+    <h2>Purchase</h2>
 
-        <input type="text" id="name" placeholder="Full Name">
-        <input type="email" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="Password">
-        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="number" id="quantity" placeholder="Enter Quantity">
 
-        <button onclick="signUp()">Create Account</button>
+    <button onclick="purchase()">Purchase</button>
 
-        <p class="error" id="errorMsg"></p>
+    <p class="login-text">
+        <a href="index.html">Back To Home Page</a>
+    </p>
+</div>
 
-        <p class="login-text">
-            Already have an account? <a href="signin.html">Sign In</a>
-        </p>
-    </div>
+<script>
+function purchase() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    let qty = document.getElementById("quantity").value;
 
-    <script>
-        function signUp() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let pass = document.getElementById("password").value;
-            let cpass = document.getElementById("confirmPassword").value;
-            let error = document.getElementById("errorMsg");
+    if (name === "" || email === "" || pass === "" || qty === "") {
+        alert("Please fill all details");
+        return;
+    }
 
-            if (name === "" || email === "" || pass === "" || cpass === "") {
-                error.textContent = "Please fill all fields";
-                return;
-            }
+    if (qty <= 0) {
+        alert("Please enter a valid quantity");
+        return;
+    }
 
-            if (pass !== cpass) {
-                error.textContent = "Passwords do not match";
-                return;
-            }
-
-            error.style.color = "green";
-            error.textContent = "Account created successfully!";
-        }
-    </script>
+    alert("Thank you for purchasing!");
+}
+</script>
 
 </body>
 </html>
