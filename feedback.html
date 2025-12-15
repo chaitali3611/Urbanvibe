@@ -70,7 +70,8 @@
 <div class="container">
     <h2>Urban Vibe - Feedback Form</h2>
 
-    <form>
+    <form onsubmit="return showPopup()">
+        
         <label>Your Name</label>
         <input type="text" placeholder="Enter your name" required>
 
@@ -109,6 +110,13 @@
 
         <button type="submit">Submit Feedback</button>
     </form>
+    <script>
+        function showPopup() {
+            alert("Form submitted successfully!");
+            return false; // stops page refresh
+        }
+    </script>
+    
     <a href="index.html"><button class="button">Move to home page</button></a>
 
 </div>

@@ -87,7 +87,7 @@
 
         <button onclick="signUp()">Create Account</button>
 
-        <!-- <p class="error" id="errorMsg"></p> -->
+        <p class="error" id="errorMsg"></p>
 
         <p class="login-text">
             <a href="index.html">Move to home page </a>
@@ -100,7 +100,7 @@
             let email = document.getElementById("email").value;
             let pass = document.getElementById("password").value;
             let cpass = document.getElementById("confirmPassword").value;
-            // let error = document.getElementById("errorMsg"); -->
+            let error = document.getElementById("errorMsg");
 
             if (name === "" || email === "" || pass === "" || cpass === "") {
                 error.textContent = "Please fill all fields";
