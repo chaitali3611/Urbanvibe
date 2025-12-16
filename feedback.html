@@ -6,15 +6,14 @@
     <title>Urban Vibe - Feedback Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial;
             background: #f2f2f2;
             margin: 0;
             padding: 0;
-            background-image: url("bg.jpg"); /* change image name */
+            background-image: url("bg3.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
         }
 
         .container {
@@ -45,7 +44,6 @@
             margin-top: 5px;
             border: 1px solid #aaa;
             border-radius: 5px;
-            box-sizing: border-box;
         }
 
         button {
@@ -106,14 +104,14 @@
         </select>
 
         <label>Any Suggestions or Comments?</label>
-        <textarea rows="4" placeholder="Write your feedback here..." required></textarea>
+        <textarea rows="4" placeholder="Write your feedback here..."></textarea>
 
         <button type="submit">Submit Feedback</button>
     </form>
     <script>
         function showPopup() {
             alert("Form submitted successfully!");
-            return false; // stops page refresh
+            return false;
         }
     </script>
     
